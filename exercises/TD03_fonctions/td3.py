@@ -29,11 +29,44 @@ temps = secondeEnTemps(100000)
 
 
 def afficheTemps(temps):
-    a=temps[0]
-    b=temps[1]
-    c=temps[2]
-    d=temps[3]
-    if 
+    a = temps[0]
+    b = temps[1]
+    c = temps[2]
+    d = temps[3]
+    liste_1 = [a, b, c, d]
+    liste_2 = ["jours", "heures", "minutes", "secondes"]
+    liste_3 = ["jour", "heure", "minute", "seconde"]
+    i = 0
+    while i < 4:
+        if liste_1[i] == 1:
+            print(str(liste_1[i])+liste_3[i])
+        elif liste_1[i] == 0:
+            print(" ")
+        else:
+            print(str(liste_1[i])+liste_2[i])
+        i += 1
 
 
-afficheTemps((1, 0, 14, 23))
+afficheTemps((1, 8, 14, 23))
+
+
+jours=int(input("rentrer un nombre de jours"))
+heures=int(input("entrer un nombre d'heures"))
+minutes=int(input("rentrer un nombre de minutes"))
+secondes=int(input("rentrer un nombre de secondes"))
+def AfficherTemps(jours, heures, minutes, secondes):
+    print(str(jours)+"jours")
+    if heures//24==0:
+        print(str(heures)+"heures")
+    else:
+        return
+    if minutes//60==0:
+        print(str(minutes)+"minutes")
+    else:
+        return
+    if secondes//60==0:
+        print(str(secondes)+"secondes")
+    else:
+        return
+
+AfficherTemps(jours, heures, minutes, secondes)
