@@ -50,23 +50,29 @@ def afficheTemps(temps):
 afficheTemps((1, 8, 14, 23))
 
 
-jours=int(input("rentrer un nombre de jours"))
-heures=int(input("entrer un nombre d'heures"))
-minutes=int(input("rentrer un nombre de minutes"))
-secondes=int(input("rentrer un nombre de secondes"))
+jours = int(input("rentrer un nombre de jours"))
+heures = int(input("entrer un nombre d'heures"))
+minutes = int(input("rentrer un nombre de minutes"))
+secondes = int(input("rentrer un nombre de secondes"))
+
+
 def AfficherTemps(jours, heures, minutes, secondes):
     print(str(jours)+"jours")
-    if heures//24==0:
+    if heures//24 == 0:
         print(str(heures)+"heures")
     else:
+        print("error")
         return
-    if minutes//60==0:
+    if minutes//60 == 0:
         print(str(minutes)+"minutes")
     else:
+        print("error")
         return
-    if secondes//60==0:
+    if secondes//60 == 0:
         print(str(secondes)+"secondes")
     else:
+        print("error")
         return
+
 
 AfficherTemps(jours, heures, minutes, secondes)
