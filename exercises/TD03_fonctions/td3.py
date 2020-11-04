@@ -1,4 +1,6 @@
-# temps[0] : jours, temps[1]: minutes, temps[2]: minutes, temps[3]: secondes
+# temps[0]: jours, temps[1]: minutes, temps[2]: minutes, temps[3]: secondes
+
+import time
 
 
 def tempsEnSeconde(jours, heures, minutes, secondes):
@@ -22,10 +24,12 @@ def secondeEnTemps(seconde):
     d = a % 60
     e = c // 24
     f = c % 24
-    print(e, "jours", f, "heures", d, "minutes", b, "secondes")
-
-
-temps = secondeEnTemps(100000)
+    g = e // 30
+    h = e % 30
+    i = g // 12
+    j = g % 12
+    print(i, "années", j, "mois", h, "jours")
+    print(f, "heures", d, "minutes", b, "secondes")
 
 
 def afficheTemps(temps):
@@ -47,32 +51,90 @@ def afficheTemps(temps):
         i += 1
 
 
-afficheTemps((1, 8, 14, 23))
-
-
-jours = int(input("rentrer un nombre de jours"))
-heures = int(input("entrer un nombre d'heures"))
-minutes = int(input("rentrer un nombre de minutes"))
-secondes = int(input("rentrer un nombre de secondes"))
-
-
-def AfficherTemps(jours, heures, minutes, secondes):
+def DemandeTemps(jours, heures, minutes, secondes):
+    jours = int(input("rentrer un nombre de jours"))
+    heures = int(input("entrer un nombre d'heures"))
+    minutes = int(input("rentrer un nombre de minutes"))
+    secondes = int(input("rentrer un nombre de secondes"))
     print(str(jours)+"jours")
     if heures//24 == 0:
         print(str(heures)+"heures")
     else:
         print("error")
+        heures = int(input("rentrer une heure"))
         return
     if minutes//60 == 0:
         print(str(minutes)+"minutes")
     else:
         print("error")
+        minutes = int(input("rentrer une minutes"))
         return
     if secondes//60 == 0:
         print(str(secondes)+"secondes")
     else:
         print("error")
+        secondes = int(input("rentrer une seconde"))
         return
 
 
-AfficherTemps(jours, heures, minutes, secondes)
+def SommeTemps(temps1, temps2):
+    jours_1 = int(input("rentrer un nombre de jours1"))
+    jours_2 = int(input("rentrer un nombre de jours2"))
+    heures_1 = int(input("rentrer un nombre de heures 1"))
+    heures_2 = int(input("rentrer un nombre de heures 2"))
+    minutes_1 = int(input("rentrer un nombre de minutes 1"))
+    minutes_2 = int(input("rentrer un nombre de minutes 2"))
+    secondes_1 = int(input("rentrer un nombre de secondes 1"))
+    secondes_2 = int(input("rentrer un nombre de secondes 2"))
+    temps1 = tempsEnSeconde(jours_1, heures_1, minutes_1, secondes_1)
+    temps2 = tempsEnSeconde(jours_2, heures_2, minutes_2, secondes_2)
+    temps = temps1+temps2
+    temps_final = secondeEnTemps(temps)
+    return temps_final
+
+
+def ProportionTemps(temps1, proportion):
+    jours = int(input("rentrer un nombre de jours"))
+    heures = int(input("rentrer un nombre d'heures"))
+    minutes = int(input("rentrer un nombre de minutes"))
+    secondes = int(input("rentrer un nombre de secondes"))
+    temps1 = tempsEnSeconde(jours, heures, minutes, secondes)
+    proportion = float(input("rentrer une proportion"))
+    temps2 = int(temps1*proportion)
+    temps_final = secondeEnTemps(temps2)
+    return temps_final
+
+
+a = int(time.time())
+
+
+def TempsEnDate(a):
+    temps1 = secondeEnTemps(a)
+    return temps1
+
+
+def bissextile(jours):
+    a = jours // 365
+    b = a // 4
+    return b
+
+
+print(bissextile(20000)
+
+
+def NombreBissextile(années):
+    a = années // 4
+    return a
+
+
+print(NombreBissextile(2020))
+
+
+def TempsEnDateBissextile(temps):
+    secondeEnTemps(temps)
+    NombreBissextile(i)
+    print 
+
+temps = secondeEnTemps(1000000000)
+afficheTemps(temps)
+afficheDate(tempsEnDateBisextile(temps))
