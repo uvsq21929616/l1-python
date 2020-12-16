@@ -1,0 +1,8 @@
+print(5 % 2)
+print(5 // 2)
+print(5 / 2)
+print(("Da" * 4) / 2)
+print(("Pa" + "La") * 2)
+print("Da" + 3)
+print("Da" * 4)
+print((1 + 2) ** 3)
