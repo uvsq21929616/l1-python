@@ -11,7 +11,6 @@ def syracuse(n):
 
 print(syracuse(6))
 
-
 valeurs_2 = []
 
 
@@ -24,9 +23,6 @@ def testeConjecture(n_max):
         valeurs_2.append(n_max)
     a = (valeurs_2[-1] == 1)
     return a
-
-
-print(testeConjecture(10000))
 
 
 valeurs_3 = []
@@ -44,9 +40,6 @@ def tempsVol(n):
     return vol
 
 
-print("Le temps de vol de", 45, "est", tempsVol(45))
-
-
 def tempsVolListe(n_max):
     temps = []
     while n_max >= 1:
@@ -55,11 +48,6 @@ def tempsVolListe(n_max):
         n_max = n_max - 1
     return temps
 
-
-a = tempsVolListe(10000)
-b = a
-b.sort()
-print(b[-1])
 
 i = 1
 while i < 10000:
@@ -81,23 +69,24 @@ def altitudeMax(n):
     return valeurs_4[-1]
 
 
-print(altitudeMax(6171))
+valeurs_5 = []
 
 
 def altitudeMaxList(n_max):
     altitude = []
-    while n_max >= 1:
-        valeurs_5 = []
-        if n_max % 2 == 0:
-            n_max = n_max//2
-        else:
-            n_max = n_max*3+1
-        valeurs_5.append(n_max)
-        valeurs_5.sort()
-        b = valeurs_5[-1]
-        altitude += [b]
-        n_max = n_max-1
+    for n_max in range(n_max, 1, -1):
+        n = n_max
+        liste = []
+        liste.append(n)
+        while n > 1:
+            if n % 2 == 0:
+                n = n//2
+            else:
+                n = n*3+1
+            liste.append(n)
+        liste.sort()
+        altitude.append(liste[-1])
     return altitude
 
 
-print(altitudeMaxList(8))
+print(altitudeMaxList(3))
